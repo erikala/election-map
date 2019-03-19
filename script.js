@@ -42,6 +42,21 @@ betsy.electionResults[43] = 27;
 console.log(jane.electionResults);
 console.log(betsy.electionResults);
 
+
+var setStateResults = function(state)
+{
+  theStates[state].winner = null;
+
+  if (jane.electionResults[state] > betsy.electionResults[state]){
+      theStates[state].winner = jane;
+  }
+  else if (jane.electionResults[state] < betsy.electionResults[state]){
+      theStates[state].winner = betsy;
+  }
+
+};
+
+
 jane.tallyUpTotalVotes();
 betsy.tallyUpTotalVotes();
 
