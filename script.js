@@ -46,3 +46,17 @@ betsy.tallyUpTotalVotes();
 //console log total votes
 console.log(jane.totalVotes);
 console.log(betsy.totalVotes);
+
+var winner = "?";
+
+if (jane.totalVotes > betsy.totalVotes){
+    winner = jane.name;
+}
+else if (jane.totalVotes < betsy.totalVotes){
+    winner = betsy.name;
+}
+else{
+    winner = "Draw."
+}
+
+console.log("And the winner is..." + winner + "!");
