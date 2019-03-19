@@ -9,6 +9,16 @@ politician.electionResults = null;
 
 politician.totalVotes = 0;
 
+politician.tallyUpTotalVotes = function(){
+
+    this.totalVotes = 0;
+
+    for (var i = 0; i < this.electionResults.length; i++){
+        this.totalVotes = this.totalVotes + this.electionResults[i];
+    }
+
+};
+
 return politician;
 };
 
@@ -29,3 +39,10 @@ betsy.electionResults[43] = 27;
 
 console.log(jane.electionResults);
 console.log(betsy.electionResults);
+
+jane.tallyUpTotalVotes();
+betsy.tallyUpTotalVotes();
+
+//console log total votes
+console.log(jane.totalVotes);
+console.log(betsy.totalVotes);
