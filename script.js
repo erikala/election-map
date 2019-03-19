@@ -54,6 +54,15 @@ var setStateResults = function(state)
       theStates[state].winner = betsy;
   }
 
+  var stateWinner = theStates[state].winner;
+
+  if (stateWinner !== null){
+    theStates[state].rgbColor = stateWinner.partyColor;
+}
+  else {
+    theStates[state].rgbColor = [11,32,57];
+}
+
 };
 
 
