@@ -63,6 +63,33 @@ var setStateResults = function(state)
     theStates[state].rgbColor = [11,32,57];
 }
 
+var stateInfoTable = document.getElementById('stateResults');
+
+var header = stateInfoTable.children[0];
+var body = stateInfoTable.children[1];
+var stateName = header.children[0].children[0];
+var abbrev = header.children[0].children[1];
+var candidate1Name = body.children[0].children[0];
+var candidate2Name = body.children[1].children[0];
+var candidate1Results = body.children[0].children[1];
+var candidate2Results = body.children[1].children[1];
+var winnersName = body.children[2].children[1];
+
+stateName.innerText = theStates[state].nameFull;
+abbrev.innerText = "(" +theStates[state].nameAbbrev + ")";
+
+candidate1Name.innerText = jane.name;
+candidate2Name.innerText = betsy.name;
+
+candidate1Results.innerText = jane.electionResults[state];
+candidate2Results.innerText = betsy.electionResults[state];
+
+if (theStates[state].winner === null){
+    winnersName.innerText = "DRAW";
+} else {
+    winnersName.innerText = theStates[state].winner.name;
+}
+
 };
 
 
